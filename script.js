@@ -24,7 +24,9 @@ var words = [
   "boolean",
 ];
 // The init function is called when the page loads
-function init() {}
+function init() {
+  //Pull out the wins and losses in the local storage.
+}
 // The startGame function is called when the start button is clicked
 function startGame() {
   // Prevents start button from being clicked when round is in progress
@@ -48,9 +50,23 @@ function renderBlanks() {
   // Converts blankLetters array into a string and renders it on the screen
 }
 // Updates win count on screen and sets win count to client storage
-function setWins() {}
+function setWins() {
+  if(isWin === true){
+    winCounter++; 
+    win.textContent = winCounter; 
+    localStorage.setItem("winCounter", winCounter); 
+  }
+  
+}
 // Updates lose count on screen and sets lose count to client storage
-function setLosses() {}
+function setLosses() {
+  if(isWin === false){
+    loseCounter--; 
+    lose.textContent = loseCounter;
+    localStorage.setItem("loseCounter", loseCounter); 
+    
+  }
+}
 // These functions are used by init
 //Use localStorage to get the number of wins and get them on the screen
 function getWins() {
